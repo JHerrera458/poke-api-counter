@@ -1,20 +1,45 @@
 "use client";
-import React from "react";
-import { useState } from "react";
+import React, { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "@/store";
+import {
+  addOne,
+  initCounterState,
+  minusOne,
+} from "@/store/counter/counterSlice";
+
+export interface CounterResponse {
+  method: string;
+  count: number;
+}
+
+const getAPICounter = async (): Promise<CounterResponse> => {
+  const data = await fetch("/api/counter").then((res) => res.json());
+
+  return data;
+};
 
 export const CartCounter = () => {
-  const [counter, setCounter] = useState(0);
+  const count = useAppSelector((state) => state.counter.count);
+  const dispatch = useAppDispatch();
+
+  //useEffect(() => {
+  //  dispatch(initCounterState(value));
+  //}, [dispatch, value]);
+
+  useEffect(() => {
+    getAPICounter().then(({ count }) => dispatch(initCounterState(count)));
+  }, [dispatch]);
 
   function addCounter() {
-    setCounter((a) => a + 1);
+    dispatch(addOne());
   }
 
   function minusCounter() {
-    setCounter((a) => a - 1);
+    dispatch(minusOne());
   }
   return (
     <>
-      <span className="text-8xl">{counter}</span>
+      <span className="text-8xl">{count}</span>
       <div className="flex gap-x-2">
         <button
           onClick={minusCounter}

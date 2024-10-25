@@ -29,7 +29,7 @@ export const PokemonCard = ({ pokemon }: Props) => {
           </p>
           <div className="mt-5">
             <Link
-              href={`pokemon/${id}`}
+              href={`pokemon/${name}`}
               className="px-4 py-2 text-xs font-semibold text-gray-100 border rounded-full hover:bg-blue-500"
             >
               Ver detalles

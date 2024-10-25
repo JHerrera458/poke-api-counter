@@ -5,6 +5,7 @@ import {
   IoApertureOutline,
   IoBrowsersOutline,
   IoCalculatorOutline,
+  IoHeart,
 } from "react-icons/io5";
 
 import { CgPokemon } from "react-icons/cg";
@@ -29,6 +30,12 @@ const menuItems = [
     icon: <CgPokemon size={30} />,
     title: "PokeAPI",
     subtitle: "Atrapalos a todos",
+  },
+  {
+    path: "/dashboard/favorites",
+    icon: <IoHeart size={30} />,
+    title: "Favoritos",
+    subtitle: "Pokemones favoritos",
   },
 ];
 
