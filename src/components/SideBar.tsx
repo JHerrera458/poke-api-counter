@@ -7,6 +7,8 @@ import {
   IoCalculatorOutline,
 } from "react-icons/io5";
 
+import { CgPokemon } from "react-icons/cg";
+
 import { SideBarMenuItem } from "./SideBarMenuItem";
 
 const menuItems = [
@@ -22,13 +24,19 @@ const menuItems = [
     title: "Contador",
     subtitle: "Estados, sumas y restas",
   },
+  {
+    path: "/dashboard/pokemons",
+    icon: <CgPokemon size={30} />,
+    title: "PokeAPI",
+    subtitle: "Atrapalos a todos",
+  },
 ];
 
 export const SideBar = () => {
   return (
     <div
       id="menu"
-      className="left-0 z-10 w-[300px] h-screen min-h-screen overflow-y-scroll bg-gray-900 text-slate-300"
+      className="left-0 z-10 w-[300px] min-h-screen bg-gray-900 text-slate-300"
     >
       <div id="logo" className="px-6 my-4">
         <h1 className="flex items-center text-lg font-bold text-white md:text-2xl">
@@ -39,7 +47,7 @@ export const SideBar = () => {
       </div>
 
       <div id="profile" className="px-6 py-10">
-        <p className="text-slate-500">Welcome back,</p>
+        <p className="text-slate-500">Bienvenido,</p>
         <a href="#" className="inline-flex items-center space-x-2">
           <span>
             <Image
