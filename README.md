@@ -8,5 +8,6 @@ npm install
 npm run dev
 ```
 ## Vista previa del proyecto:
-Si lo deseas, puedes conocer el proyecto
+Si lo deseas, puedes conocer el proyecto en su despliegue a Vercel [Ir al proyecto](https://jh-pokeapi.vercel.app/dashboard/favorites)
+
 
